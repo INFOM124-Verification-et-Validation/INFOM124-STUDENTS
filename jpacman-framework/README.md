@@ -1,41 +1,34 @@
-![build status](https://travis-ci.org/SERG-Delft/jpacman-framework.svg?branch=master)
+# TP 1 - Specification-based testing
 
-JPacman-Framework
-=================
+## Acquaintance with the project
 
-About
------
+### Exercise 1
+Open `board.DirectionTest` and create additional test methods for e.g., the south, east, and west directions.
 
-Pacman-like game used for teaching software testing.
-It exposes students to the use of git, maven, JUnit, and mockito.
-
-Parts of the code are well tested, whereas others are left untested intentionally. As a student in software testing, you can extend the test suite, or use the framework to build extensions in a test-driven way. As a teacher, you can use the framework to create your own testing exercises.
-
-As a starting point for working on your own solution, a [template solution](https://github.com/SERG-Delft/jpacman-template) is available.
-
-We have developed and are using this code at a software testing course at Delft University of Technology, The Netherlands. Teachers interested in seeing the exercises I use there are invited to contact me.
-
-Other universities who have used this material include Antwerp, Mons, Eindhoven, and UBC (Vancouver).
-At TU Delft, we use it in combination with gitlab as continuous integration and feedback server.
-
-If you have any suggestions on how to improve this framework, please do not hesitate to contact us, open issue, or provide a pull request. Since testing is deliberately left as an exercise, pull requests that "solve" exercises or offer full coverage are less likely to be merged.
-
-Main contributors:
-
-*	Arie van Deursen (versions 1.0-5.x, 2003-2013, updates to versions 6.x and further, 2014-...)
-*	Jeroen Roosen (major rewrite, version 6.0, 2014)
+### Exercise 2
+Open the `board.OccupantTest` class and implement the 3 empty tests:
+1. `noStartSquare()` test asserts that a unit has no square to start with, i.e., a unit "has no square" at the beginning.
+2. `testOccupy()` test verifies that the unit indeed has the target square as its base after occupation. In other words, if a unit is occupied by a(ny) basic square, one should contain the other.
+3. `testReoccupy()` test verifies that the unit indeed has the target square as its base after double occupation.
 
 
-Getting Started
----------------
+## Units tests and boundary tests
 
-1. Git clone the project
-2. If you use Eclipse:
-	1. Import
-	2. Right Click -> Configure -> Convert to Maven Project
-3. To see JPacman in action: run `nl.tudelft.jpacman.Launcher`.  From the
-command line, run
-```java -classpath target/jpacman-framework-<VERSION>.jar nl.tudelft.jpacman.Launcher```
-4. To run the test suite in maven: `mvn test`
-5. To run the test suite in Eclipse: right click -> run as -> JUnit Test.
-	 
+Let's focus on the movements of the ghosts. For both exercises 3 and 4, use the `GhostMapParser` class to support your JUnit tests. Feel free to explore how the `Ghost` parent class work.
+
+### Exercise 3
+Open `npc.ghost.Clyde` class and implement at least 4 JUnit tests for the method `Optional<Direction> nextAiMove()` in a `ClydeTest` class.
+
+> Instantiating the `Clyde` class and adding to a map requires some understanding of JPacman. Let's have a head start. See the `GhostMapParser` class.
+> - In the tests, we need to build a level, based on a map. This map should be designed based on what we want to exercise in that test. For example, if the map is a list of strings as the following: `{"############", "#P________C#", "############"}` (the `_` characters should be replaced by empty spaces in the code), the PacMan and the Clyde are on the same row, 8 columns apart.
+> - The provided `GhostMapParser#parseMap()` method receives the map, and returns a `Level` that uses the provided map.
+> - If your test involves a player on the map, do not forget to create it (`PlayerFactory#createPacMan`), to register it in the level (`Level#registerPlayer`) as well as to set its direction (`Player#setDirection`).
+> - You should assert the direction that the ghost takes based on its current position in the level. To do that, you need the ghost that exists in the created level. For that, we provide the `Navigation#findUnitInBoard` method.
+
+### Exercise 4
+Open `npc.ghost.Inky` class and see how this ghost works, and especially its `nextAiMove` method. Think about partitions/cases. What tests should you design to make sure this ghost works? Read its documentation and its source code. Use all the information you have in hands!
+
+Implement at least 5 JUnit tests (2 good weather and 3 bad weather) for the method `Optional<Direction> nextAiMove()` in a `InkyTest` class.
+
+### BONUS exercise
+The method `squaresAheadOf` in the class `Unit` is not tested. Write at least 3 tests for this method.
