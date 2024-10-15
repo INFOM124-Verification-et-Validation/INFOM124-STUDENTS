@@ -47,18 +47,3 @@ mvn -v
 
 The result should be similar to the image below. Make sure the Java version is 17!
 ![](images/maven-version.png)
-
-## Revision control
-
-Each student will work on the codebase on a forked repository of this one. We expect you to follow these best practices during the courses:
-
-- **Make sure you commit frequently**: commit at least once, but possibly more often per exercise!
-- **Write clear commit messages**: your commit messages should serve as a summary of the changes you made.
-- **Use branches**: you'll get most benefit from git if you also use branches, for example one branch for every exercise.
-- **Use pull requests** and avoid committing to master directly.
-
-Each pull request will be reviewed by another student before merging into main. Following the best practices on your work will help the reviewer to make a good review of your work.
-
-## Acknowledgements
-
-This project is based on the TUDelft [JPacman-Framework project](https://github.com/SERG-Delft/jpacman-framework), mainly created by Arie van Deursen and Jeroen Roosen.
