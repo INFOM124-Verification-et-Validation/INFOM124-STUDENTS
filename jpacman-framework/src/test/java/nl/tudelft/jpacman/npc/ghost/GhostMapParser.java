@@ -44,4 +44,6 @@ public final class GhostMapParser extends MapParser {
                 super.addSquare(grid, ghosts, startPositions, x, y, c);
         }
     }
+
+
 }
