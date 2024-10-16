@@ -32,6 +32,7 @@ class OccupantTest {
     @Test
     void noStartSquare() {
         // TODO
+        assert unit.hasSquare() == false;
     }
 
     /**
@@ -41,6 +42,9 @@ class OccupantTest {
     @Test
     void testOccupy() {
         // TODO
+        Square square = new BasicSquare();
+        unit.occupy(square);
+        assert unit.getSquare() == square;
     }
 
     /**
@@ -50,5 +54,10 @@ class OccupantTest {
     @Test
     void testReoccupy() {
         // TODO
+        Square square = new BasicSquare();
+        unit.occupy(square);
+        unit.leaveSquare();
+        unit.occupy(square);
+        assert unit.getSquare() == square;
     }
 }
