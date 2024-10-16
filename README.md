@@ -1,5 +1,7 @@
 # INFOM124-STUDENTS
 
+Test
+
 ## Practical courses - 2024-2025
 
 This repository contains the JPacman project that will be used during the practical courses of "INFOM124 - Vérification et validation logicielle"
