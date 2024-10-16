@@ -32,15 +32,20 @@ class OccupantTest {
     @Test
     void noStartSquare() {
         // TODO
+        assertThat(unit.hasSquare()).isEqualTo(false);
     }
 
     /**
      * Tests that the unit indeed has the target square as its base after
      * occupation.
+     * verifie que quand je passe à un nouveau Square, c'est bien ma target
      */
     @Test
     void testOccupy() {
         // TODO
+        BasicSquare squareNext = new BasicSquare();
+        unit.occupy(squareNext);
+        assertThat(unit.getSquare()).isEqualTo(squareNext);
     }
 
     /**
@@ -50,5 +55,11 @@ class OccupantTest {
     @Test
     void testReoccupy() {
         // TODO
+        BasicSquare squareNext1 = new BasicSquare();
+        BasicSquare squareNext2 = new BasicSquare();
+        unit.occupy(squareNext1);
+        unit.occupy(squareNext2);
+        unit.occupy(squareNext1);
+        assertThat(unit.getSquare()).isEqualTo(squareNext1);
     }
 }
