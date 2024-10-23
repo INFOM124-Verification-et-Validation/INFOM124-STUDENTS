@@ -16,7 +16,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @author: Chenru Lin
+
  * @discription: Some tests for the movement of Inky
  */
 public class InkyTest {
@@ -86,6 +86,7 @@ public class InkyTest {
         level.registerPlayer(p);
         p.setDirection(Direction.WEST);
         Inky i = Navigation.findUnitInBoard(Inky.class, level.getBoard());
+        assert i != null;
         assertThat(i.nextAiMove()).isEqualTo(Optional.of(Direction.EAST));
     }
 
@@ -117,6 +118,7 @@ public class InkyTest {
         level.registerPlayer(p);
         p.setDirection(Direction.WEST);
         Inky i = Navigation.findUnitInBoard(Inky.class, level.getBoard());
+        assert i != null;
         assertThat(i.nextAiMove()).isEqualTo(Optional.empty());
     }
 
@@ -132,6 +134,7 @@ public class InkyTest {
         level.registerPlayer(p);
         p.setDirection(Direction.WEST);
         Inky i = Navigation.findUnitInBoard(Inky.class, level.getBoard());
+        assert i != null;
         assertThat(i.nextAiMove()).isEqualTo(Optional.empty());
     }
 
