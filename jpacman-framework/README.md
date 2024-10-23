@@ -8,7 +8,7 @@
 4. See the different `.md` files for the exercises instructions.
 5. Enjoy !
 
-## How to work on the project ?
+## How to work on the project ? Comment ça marche ???
 
 Each student will work on a fork repository of [INFOM124-STUDENTS](https://github.com/INFOM124-Verification-et-Validation/INFOM124-STUDENTS). We expect you to follow some best software engineering practices during the courses:
 
@@ -25,3 +25,6 @@ If you have any suggestion, question or comment on this course, feel free to say
 ## Acknowledgements
 
 This project is based on the TUDelft [JPacman-Framework project](https://github.com/SERG-Delft/jpacman-framework), mainly created by Arie van Deursen and Jeroen Roosen.
+
+
+NoHBruh was here 
