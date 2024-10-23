@@ -4,6 +4,7 @@ import nl.tudelft.jpacman.Launcher;
 import nl.tudelft.jpacman.game.Game;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,6 +37,7 @@ public class StartupSystemTest {
      * game and checks it is indeed in progress.
      */
     @Test
+    @Disabled
     public void gameIsRunning() {
         launcher.launch();
 

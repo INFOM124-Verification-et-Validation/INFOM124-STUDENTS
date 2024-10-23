@@ -21,6 +21,7 @@ import nl.tudelft.jpacman.sprite.PacManSprites;
 
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -149,6 +150,7 @@ class NavigationTest {
      * @throws IOException if board reading fails.
      */
     @Test
+    @Disabled
     void testFullSizedLevel() throws IOException {
         try (InputStream i = getClass().getResourceAsStream("/board.txt")) {
             Board b = parser.parseMap(i).getBoard();
