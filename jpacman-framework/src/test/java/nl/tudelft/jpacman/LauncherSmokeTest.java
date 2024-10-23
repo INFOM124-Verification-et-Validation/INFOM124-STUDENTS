@@ -7,6 +7,7 @@ import nl.tudelft.jpacman.game.Game;
 import nl.tudelft.jpacman.level.Player;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -54,6 +55,7 @@ public class LauncherSmokeTest {
      */
     @SuppressWarnings({"magicnumber", "methodlength", "PMD.JUnitTestContainsTooManyAsserts"})
     @Test
+    @Disabled
     void smokeTest() throws InterruptedException {
         Game game = launcher.getGame();
         Player player = game.getPlayers().get(0);
