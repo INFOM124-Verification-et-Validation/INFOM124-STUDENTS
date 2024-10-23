@@ -65,7 +65,7 @@ public class ClydeTest {
     @Test
     void nearTest() {
         level = parser.parseMap(
-            Lists.newArrayList("############", "#P     C #", "############"));
+            Lists.newArrayList("############", "#P       C #", "############"));
         Player p = playerfactory.createPacMan();
         level.registerPlayer(p);
         p.setDirection(Direction.WEST);
